@@ -1,6 +1,7 @@
 #include "./search.h"
 #include "./util.h"
 #include "browser.h"
+#include "exit.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -13,5 +14,5 @@ int main(int argc, char **argv) {
   openlink(ddgsrch("Please open duckduckgo :)"));
   openlink(bravesrch("Please open brave :)"));
 
-  return 0;
+  return SUCCESS;
 }
