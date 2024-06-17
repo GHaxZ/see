@@ -1,5 +1,6 @@
 #include "./util.h"
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #if (__STDC_VERSION__ >= 199901L)
@@ -20,6 +21,22 @@ char *appendc(char *str, char c) {
 
   return new_str;
 }
+
+char *appendstr(char *string, char *app) {
+  size_t stringlen = strlen(string);
+  size_t applen = strlen(app);
+  size_t totallen =
+      stringlen + applen +
+      1; // The total length of the new string (+1 for null terminator)
+
+  char *newstr = (char *)malloc(totallen); // Allocate memory
+
+  snprintf(newstr, totallen, "%s%s", string, app);
+
+  return newstr;
+}
+
+void *arrappend(void *arr, void *app) {}
 
 // This was yoinked from https://creativeandcritical.net/str-replace-c
 // TODO: Write my own (and worse) implementation
