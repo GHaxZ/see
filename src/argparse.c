@@ -5,20 +5,16 @@
 #include <stdlib.h>
 #include <string.h>
 #ifdef _WIN32
-// TODO: Include windows implementation
 #include "./lib/getopt.h"
 #else
 #include <unistd.h>
 #endif
 
-// INFO: There is no cross platform library for getting cli args, so I have to
-// to either implement my own or include a implementation for other platforms
+// INFO: There is no cross platform library for working with cli args, so I have
+// to to either implement my own or include a implementation for other platforms
 
-// INFO: There seem to be implementations for windows, maybe use those:
-// https://www.cnblogs.com/hustcat/articles/1516816.html
-// https://github.com/Chunde/getopt-for-windows
-
-// TODO: Write cli parser
+// INFO: I used this implementation for now:
+// https://gist.github.com/ashelly/7776712
 
 static struct option long_options[] = {
     {"help", no_argument, 0, 'h'},
